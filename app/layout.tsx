@@ -44,6 +44,11 @@ export default function RootLayout({
                 contactType: 'customer service',
                 email: 'contact@softinities.com',
               },
+              sameAs: [
+                'https://www.linkedin.com/company/110894017/',
+                'https://www.facebook.com/share/1GDVM3cZND/?mibextid=wwXIfr',
+                'https://github.com/softinities',
+              ],
             }),
           }}
         />

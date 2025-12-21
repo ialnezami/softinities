@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Linkedin, Mail, Facebook } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -41,6 +41,24 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a
+                href="https://www.linkedin.com/company/110894017/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1GDVM3cZND/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/70 hover:text-white transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
                 href="https://github.com/softinities"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -48,15 +66,6 @@ export function Footer() {
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com/company/softinities"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/70 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
               </a>
               <a
                 href="mailto:contact@softinities.com"

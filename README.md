@@ -56,13 +56,71 @@ softinities/
 
 ## Deployment
 
-The project is ready to deploy on Vercel:
+### Deploy to Vercel (Recommended)
+
+The project is fully configured for Vercel deployment.
+
+#### Option 1: Deploy via Vercel Dashboard (Easiest)
+
+1. **Push to GitHub:**
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Go to Vercel:**
+   - Visit [vercel.com](https://vercel.com)
+   - Click "Add New..." → "Project"
+   - Import your GitHub repository
+
+3. **Configure & Deploy:**
+   - Vercel auto-detects Next.js (no configuration needed)
+   - Add environment variables if needed (see `.env.example`)
+   - Click "Deploy"
+   - Your site will be live in seconds!
+
+#### Option 2: Deploy via Vercel CLI
 
 ```bash
-npm run build
+# Install Vercel CLI
+npm i -g vercel
+
+# Login to Vercel
+vercel login
+
+# Deploy (preview)
+vercel
+
+# Deploy to production
+vercel --prod
 ```
 
-Or connect your GitHub repository to Vercel for automatic deployments.
+#### Environment Variables
+
+If you want to set up email notifications for the contact form, add these in Vercel dashboard:
+
+- `RESEND_API_KEY` - If using Resend email service
+- `SENDGRID_API_KEY` - If using SendGrid
+- `CONTACT_EMAIL` - Email address to receive form submissions
+
+Currently, the contact form logs submissions to the console. To enable email notifications, uncomment and configure the email service in `app/api/contact/route.ts`.
+
+#### Build Settings (Auto-detected by Vercel)
+
+- **Framework Preset:** Next.js
+- **Build Command:** `npm run build` (auto)
+- **Output Directory:** `.next` (auto)
+- **Install Command:** `npm install` (auto)
+- **Node Version:** 18.x or later (auto)
+
+### Other Platforms
+
+This Next.js app can also be deployed to:
+- **Netlify** - Similar to Vercel, auto-detects Next.js
+- **AWS Amplify** - Supports Next.js with minimal configuration
+- **Cloudflare Pages** - Requires adapter configuration
+- **Any platform supporting Node.js** - Use `npm run build && npm start`
 
 ## License
 

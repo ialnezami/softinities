@@ -1,0 +1,25 @@
+# Vercel ignore file
+# Files and directories to exclude from deployment
+
+# Documentation
+*.md
+!README.md
+
+# Development files
+.git
+.gitignore
+.vscode
+.idea
+
+# Environment files (already in .gitignore)
+.env*
+!.env.example
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.DS_Store
+*.log
+
