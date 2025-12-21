@@ -29,6 +29,39 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="antialiased bg-[#0a0a0a] text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Softinities',
+              description: 'Full-stack development company specializing in modern web and mobile applications',
+              url: 'https://softinities.com',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+1-234-567-890',
+                contactType: 'customer service',
+                email: 'contact@softinities.com',
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Service',
+              serviceType: 'Software Development',
+              provider: {
+                '@type': 'Organization',
+                name: 'Softinities',
+              },
+              areaServed: 'Worldwide',
+            }),
+          }}
+        />
         {children}
       </body>
     </html>
