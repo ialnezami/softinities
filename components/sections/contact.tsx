@@ -16,8 +16,6 @@ const formSchema = z.object({
   company: z.string().optional(),
   projectType: z.string().min(1, 'Please select a project type'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
-  budget: z.string().optional(),
-  timeline: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
@@ -113,7 +111,7 @@ export function Contact() {
                   <MapPin className="h-5 w-5 text-purple-400 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Location</h3>
-                    <p className="text-white/70">Available Worldwide</p>
+                    <p className="text-white/70">Paris, France</p>
                   </div>
                 </div>
               </CardContent>
@@ -205,42 +203,6 @@ export function Contact() {
                     {errors.message && (
                       <p className="text-red-400 text-sm mt-1">{errors.message.message}</p>
                     )}
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="budget" className="block text-sm font-medium mb-2">
-                        Budget
-                      </label>
-                      <select
-                        id="budget"
-                        {...register('budget')}
-                        className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      >
-                        <option value="">Select budget</option>
-                        <option value="<10k">Less than $10k</option>
-                        <option value="10k-50k">$10k - $50k</option>
-                        <option value="50k-100k">$50k - $100k</option>
-                        <option value=">100k">More than $100k</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label htmlFor="timeline" className="block text-sm font-medium mb-2">
-                        Timeline
-                      </label>
-                      <select
-                        id="timeline"
-                        {...register('timeline')}
-                        className="w-full px-4 py-2 bg-white/5 border border-white/10 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                      >
-                        <option value="">Select timeline</option>
-                        <option value="<1month">Less than 1 month</option>
-                        <option value="1-3months">1-3 months</option>
-                        <option value="3-6months">3-6 months</option>
-                        <option value=">6months">More than 6 months</option>
-                      </select>
-                    </div>
                   </div>
 
                   {submitStatus === 'success' && (

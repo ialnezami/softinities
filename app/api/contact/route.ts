@@ -7,8 +7,6 @@ const contactSchema = z.object({
   company: z.string().optional(),
   projectType: z.string(),
   message: z.string().min(10),
-  budget: z.string().optional(),
-  timeline: z.string().optional(),
 });
 
 export async function POST(request: NextRequest) {
