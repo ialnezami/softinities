@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Container } from '@/components/ui/container';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 
 const projects = [
   {
@@ -11,7 +11,6 @@ const projects = [
     description: 'Modern e-commerce solution with full shopping cart, payment integration, and admin dashboard.',
     technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
     image: '/projects/ecommerce.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
   {
@@ -19,7 +18,6 @@ const projects = [
     description: 'Secure mobile banking application with real-time transactions and biometric authentication.',
     technologies: ['React Native', 'Node.js', 'MongoDB'],
     image: '/projects/banking.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
   {
@@ -27,7 +25,6 @@ const projects = [
     description: 'Comprehensive SaaS dashboard with analytics, user management, and subscription handling.',
     technologies: ['Vue.js', 'NestJS', 'PostgreSQL', 'AWS'],
     image: '/projects/saas.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
   {
@@ -35,7 +32,6 @@ const projects = [
     description: 'Full-featured food delivery platform with real-time tracking and restaurant management.',
     technologies: ['Flutter', 'Node.js', 'Firebase'],
     image: '/projects/food.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
   {
@@ -43,7 +39,6 @@ const projects = [
     description: 'Enterprise healthcare system with patient records, appointments, and telemedicine features.',
     technologies: ['React', 'Laravel', 'MySQL', 'Azure'],
     image: '/projects/healthcare.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
   {
@@ -51,7 +46,6 @@ const projects = [
     description: 'Property listing platform with virtual tours, advanced search, and CRM integration.',
     technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'AWS'],
     image: '/projects/realestate.jpg',
-    liveUrl: '#',
     githubUrl: '#',
   },
 ];
@@ -107,22 +101,13 @@ export function Portfolio() {
                   </div>
                   <div className="flex gap-4">
                     <a
-                      href={project.liveUrl}
+                      href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300 transition-colors"
                     >
-                      <ExternalLink className="h-4 w-4" />
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors"
-                    >
                       <Github className="h-4 w-4" />
-                      Code
+                      View Project
                     </a>
                   </div>
                 </CardContent>
