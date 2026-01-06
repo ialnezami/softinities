@@ -199,3 +199,4 @@ For issues or questions:
 - Next.js documentation: [nextjs.org/docs](https://nextjs.org/docs)
 - Project repository: [GitHub Issues](https://github.com/yourusername/softinities/issues)
 
+
